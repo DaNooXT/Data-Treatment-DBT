@@ -1,0 +1,30 @@
+name: 'dbt_project'
+version: '1.0.0'
+
+profile: 'dbt_project'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  dbt_project:
+    bronze:
+      +materialized: table
+      +schema: bronze
+
+    silver:
+      +schema: silver
+      core:
+        +materialized: table
+      intermadiate:
+        +materialized: view        
+      quarentine:
+        +materialized: table        

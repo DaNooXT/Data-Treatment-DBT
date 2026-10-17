@@ -1,0 +1,13 @@
+[project]
+name = "aitha"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "DaNooXT", email = "raulkbauer2009@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "dbt-core>=1.12.5",
+    "dbt-databricks>=1.12.6",
+]
