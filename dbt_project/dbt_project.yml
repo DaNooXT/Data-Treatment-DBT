@@ -27,4 +27,4 @@ models:
       intermadiate:
         +materialized: view        
       quarentine:
-        +materialized: table        
+        +materialized: table

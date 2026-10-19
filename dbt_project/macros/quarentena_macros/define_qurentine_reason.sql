@@ -1,4 +1,3 @@
-
 {% macro define_quarentine_reason(
     columns,
     required_columns,

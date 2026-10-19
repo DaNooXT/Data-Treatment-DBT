@@ -59,5 +59,4 @@
 
     FROM classified 
 
-
 {% endmacro %}

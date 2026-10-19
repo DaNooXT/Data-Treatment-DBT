@@ -6,4 +6,5 @@
         {% if not loop.last %} OR {% endif %}
       
     {% endfor %}
+
 {% endmacro %}
