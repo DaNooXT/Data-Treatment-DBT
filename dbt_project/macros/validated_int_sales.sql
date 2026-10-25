@@ -37,6 +37,7 @@
             safety=True
         ) }},
 
+        classified.source_record_key,
         classified.quarentine_reasons,
         classified.is_duplicated_id,
 

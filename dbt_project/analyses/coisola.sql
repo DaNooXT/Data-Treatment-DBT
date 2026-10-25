@@ -1,1 +1,4 @@
-SELECT * FROM {{ ref('silver_sales') }}
+SELECT
+    *
+FROM 
+    {{ ref('quarentine_silver_sales') }}
