@@ -13,6 +13,7 @@ SELECT
     SHA2 (
         TO_JSON (
             NAMED_STRUCT (
+                'sales_id', sales_id
                 'date_sk', date_sk,
                 'store_sk', store_sk,
                 'product_sk', product_sk,
