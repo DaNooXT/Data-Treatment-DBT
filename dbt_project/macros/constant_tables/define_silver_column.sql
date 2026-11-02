@@ -2,6 +2,7 @@
 
     {% if name_table == "sales" %}
         {% do return({
+            'source_record_key': 'STRING',
             'sales_id': 'BIGINT',
             'date_sk': 'BIGINT',
             'store_sk': 'BIGINT',

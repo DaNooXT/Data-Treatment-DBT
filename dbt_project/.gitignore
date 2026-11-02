@@ -6,3 +6,4 @@ logs/
 .env
 dbt_internal_packages/
 .vscode
+analyses/

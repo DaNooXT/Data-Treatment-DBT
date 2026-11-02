@@ -2,6 +2,7 @@
 
     {% if table_name == 'sales' %}
         {% do return([
+            'source_record_key',
             'sales_id',
             'date_sk',
             'store_sk',
