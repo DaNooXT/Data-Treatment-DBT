@@ -6,7 +6,7 @@ models:
 
     columns:
       - name: source_record_key
-        description: "Identificador técnico do conteúdo de origem."
+        description: "UUID estável do registro de venda na origem."
         data_tests:
           - not_null
           - unique
@@ -37,6 +37,22 @@ models:
         data_tests:
           - not_null
 
+      - name: unit_price
+        data_tests:
+          - not_null
+
+      - name: gross_amount
+        data_tests:
+          - not_null
+
+      - name: discount_amount
+        data_tests:
+          - not_null
+
       - name: net_amount
+        data_tests:
+          - not_null
+
+      - name: payment_method
         data_tests:
           - not_null

@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: quarentine_silver_sales
+    columns:
+      - name: source_record_key
+        data_tests:
+          - not_null
+          - unique
+
+      - name: status
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['open', 'resolved']

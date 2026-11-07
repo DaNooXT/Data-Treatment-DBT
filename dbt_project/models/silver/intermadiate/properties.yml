@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: int_silver_sales
+    columns:
+      - name: source_record_key
+        data_tests:
+          - not_null
+          - unique
+
+      - name: quarentine_reasons
+        data_tests:
+          - not_null
+
+      - name: is_duplicated_id
+        data_tests:
+          - not_null

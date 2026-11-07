@@ -1,0 +1,100 @@
+version: 2
+
+models:
+  - name: fct_sales
+    description: "Fato gold no grão de uma venda da silver por source_record_key."
+    columns:
+      - name: source_record_key
+        description: "UUID estável da venda na origem."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: sales_id
+        description: "Identificador de negócio da venda."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: date_sk
+        description: "Chave da data da venda; a dimensão de datas não está disponível neste projeto."
+        data_tests:
+          - not_null
+
+      - name: store_sk
+        description: "Chave da loja; a dimensão de lojas não está disponível neste projeto."
+        data_tests:
+          - not_null
+
+      - name: product_sk
+        description: "Chave do produto; a dimensão de produtos não está disponível neste projeto."
+        data_tests:
+          - not_null
+
+      - name: customer_sk
+        description: "Chave do cliente; a dimensão de clientes não está disponível neste projeto."
+        data_tests:
+          - not_null
+
+      - name: quantity
+        data_tests:
+          - not_null
+
+      - name: unit_price
+        data_tests:
+          - not_null
+
+      - name: gross_amount
+        data_tests:
+          - not_null
+
+      - name: discount_amount
+        data_tests:
+          - not_null
+
+      - name: net_amount
+        data_tests:
+          - not_null
+
+      - name: payment_method
+        data_tests:
+          - not_null
+
+  - name: mart_sales_by_date_store
+    description: "Indicadores de vendas agregados por data e loja."
+    columns:
+      - name: date_sk
+        data_tests:
+          - not_null
+
+      - name: store_sk
+        data_tests:
+          - not_null
+
+      - name: sales_count
+        data_tests:
+          - not_null
+
+      - name: customer_count
+        data_tests:
+          - not_null
+
+      - name: quantity_sold
+        data_tests:
+          - not_null
+
+      - name: gross_sales_amount
+        data_tests:
+          - not_null
+
+      - name: discount_amount
+        data_tests:
+          - not_null
+
+      - name: net_sales_amount
+        data_tests:
+          - not_null
+
+      - name: average_sale_amount
+        data_tests:
+          - not_null

@@ -24,3 +24,6 @@ snapshots:
         - discount_amount
         - net_amount
         - payment_method
+        - quarentine_reasons
+        - is_duplicated_id
+        - raw_record

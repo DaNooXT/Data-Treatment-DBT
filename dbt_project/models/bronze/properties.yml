@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: bronze_sales
+    description: "Cópia bruta dos registros de vendas recebidos da API."
+    columns:
+      - name: source_record_key
+        description: "UUID estável do registro de venda na origem."
+        data_tests:
+          - not_null
+          - unique
