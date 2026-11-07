@@ -1,0 +1,50 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+.vscode/settings.json
+
+analyses/
+
+profiles.yml
+.user.yml
+target/
+dbt_packages/
+logs/
+.env
+dbt_internal_packages/
+.vscode
+dbt_project/analyses/coisola.sql
+
+
+# Ambiente local
+.venv/
+__pycache__/
+*.pyc
+
+# Credenciais
+.env
+.env.*
+
+# Git
+.git/
+.gitignore
+
+# Arquivos temporários do dbt
+dbt_project/target/
+dbt_project/logs/
+dbt_project/dbt_packages/
+
+# IDE
+.vscode/
+.idea/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db

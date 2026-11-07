@@ -1,0 +1,20 @@
+services:
+  dbt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: aitha-dbt
+
+    working_dir: /workspace/dbt_project
+
+    env_file:
+      - .env
+
+    environment:
+      DBT_PROFILES_DIR: /root/.dbt
+
+    volumes:
+      - .:/workspace
+
+      - ./dbt_project/profiles.yml:/root/.dbt/profiles.yml:ro
