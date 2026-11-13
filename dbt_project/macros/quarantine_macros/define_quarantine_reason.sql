@@ -1,4 +1,4 @@
-{% macro define_quarentine_reason(
+{% macro define_quarantine_reason(
     columns,
     required_columns,
     required_non_negative_columns,
@@ -9,7 +9,7 @@
         ARRAY(
             CASE
                 WHEN (
-                    {{ cast_valid(columns, source_alias=source_alias, quarentine=True) }}
+                    {{ cast_valid(columns, source_alias=source_alias, quarantine=True) }}
                 )
                 THEN 'INVALID_TYPE'
             END,

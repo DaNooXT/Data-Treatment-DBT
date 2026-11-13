@@ -11,6 +11,7 @@
             ) }} AS is_duplicated_id
 
         FROM {{ ref(source_model) }} AS source
+        WHERE COALESCE(source.`exclude`, false) = false
 
     ),
 
@@ -19,7 +20,7 @@
         SELECT
             source.*,
 
-            {{ define_quarentine_reason(
+            {{ define_quarantine_reason(
                 columns,
                 required_columns,
                 required_non_negative_columns,

@@ -1,6 +1,7 @@
 WITH bronze_records AS (
     SELECT source_record_key
     FROM {{ ref('bronze_sales') }}
+    WHERE COALESCE(`exclude`, false) = false
 ),
 
 intermediate_records AS (

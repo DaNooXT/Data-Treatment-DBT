@@ -2,10 +2,13 @@ version: 2
 
 models:
   - name: bronze_sales
-    description: "Cópia bruta dos registros de vendas recebidos da API."
+    description: "Espelho completo da origem raw_sales; exclusões na origem são refletidas em cada execução."
     columns:
       - name: source_record_key
         description: "UUID estável do registro de venda na origem."
         data_tests:
           - not_null
           - unique
+
+      - name: exclude
+        description: "Flag booleana da origem; TRUE exclui o registro das camadas Silver e Gold."

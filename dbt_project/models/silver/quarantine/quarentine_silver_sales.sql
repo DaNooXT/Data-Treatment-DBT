@@ -98,8 +98,31 @@ quarentine_records AS (
         INNER JOIN {{ ref('int_silver_sales') }} AS S
             ON QR.source_record_key = S.source_record_key
         
-        WHERE QR.status = 'open'
+        WHERE QR.status IN ('open', 'removed')
             AND COALESCE(SIZE(S.quarentine_reasons), 0) = 0
+    )
+
+    , removed_records AS (
+
+        SELECT
+            QR.source_record_key,
+            QR.quarentine_id,
+            QR.source_model,
+            QR.source_record_id,
+            QR.record_fingerprint,
+            QR.quarentine_reasons,
+            QR.raw_record,
+            QR.first_seen_at,
+            QR.last_seen_at,
+
+            '{{ invocation_id }}' AS run_id,
+
+            'removed' AS status,
+            CAST(NULL AS TIMESTAMP) AS resolved_at
+        FROM {{ this }} AS QR
+        LEFT ANTI JOIN {{ ref('int_silver_sales') }} AS S
+            ON QR.source_record_key = S.source_record_key
+        WHERE QR.status = 'open'
     )
 {% endif %}
 
@@ -112,6 +135,11 @@ quarentine_records AS (
 
     SELECT *
     FROM resolved_records
+
+    UNION ALL
+
+    SELECT *
+    FROM removed_records
     
 {% else %}
 

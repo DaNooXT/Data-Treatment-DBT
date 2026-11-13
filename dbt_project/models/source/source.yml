@@ -6,3 +6,8 @@ sources:
     schema: source  
     tables:
       - name: raw_sales
+        columns:
+          - name: source_record_key
+            description: "Identificador estável e único do registro de origem."
+          - name: exclude
+            description: "Flag booleana; TRUE exclui o registro do processamento analítico."

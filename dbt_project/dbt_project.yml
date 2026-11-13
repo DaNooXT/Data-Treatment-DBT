@@ -17,16 +17,16 @@ clean-targets:
 models:
   dbt_project:
     bronze:
-      +materialized: incremental
+      +materialized: table
       +schema: bronze
 
     silver:
       +schema: silver
       core:
-        +materialized: incremental
-      intermadiate:
-        +materialized: view        
-      quarentine:
+        +materialized: table
+      intermediate:
+        +materialized: view
+      quarantine:
         +materialized: incremental
 
     gold:
